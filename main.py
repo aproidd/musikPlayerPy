@@ -215,8 +215,6 @@ class TerminalMusicPlayerApp:
                 self.player.stop()
             self.current_index = self.playlist_manager.get_next_song_index(self.current_index)
             self.ui.add_message(f"Lagu dipindahkan ke: {songs[self.current_index]['title']}")
-            # Auto-play next song
-            self._play_song(self.current_index)
         else:
             self.ui.add_message("Tidak ada lagu dalam playlist", error=True)
     
@@ -228,8 +226,6 @@ class TerminalMusicPlayerApp:
                 self.player.stop()
             self.current_index = self.playlist_manager.get_prev_song_index(self.current_index)
             self.ui.add_message(f"Lagu dipindahkan ke: {songs[self.current_index]['title']}")
-            # Auto-play previous song
-            self._play_song(self.current_index)
         else:
             self.ui.add_message("Tidak ada lagu dalam playlist", error=True)
     
